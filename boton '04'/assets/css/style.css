@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+button {
+  background: #46c6ff;
+  border: none;
+  padding: 10px 40px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
