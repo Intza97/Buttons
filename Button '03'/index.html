@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--==================== METADATOS ====================-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Buttons">
+  <meta name="keywords" content="HTML-CSS-JS">
+  <meta name="author" content="Rocio Cuello">
+
+  <!--==================== CSS ====================-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--==================== TITULO ====================-->
+  <title>Buttons | Botón con barra de progreso</title>
+
+  <!--==================== ICONO DE PESTAÑA ====================-->
+  <link rel="icon" sizes="64x64" href="assets/img/favicon.webp"> 
+
+  <!--==================== ICONOS ====================-->
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="button">
+    <div class="content">
+      <i class="bx bx-cloud-download"></i>
+      <span class="button-text">Download</span>
+    </div>
+  </div>
+  <!--==================== SCRIPT ====================-->
+  <script>
+    const button = document.querySelector(".button");
+    button.addEventListener("click", () => {
+      button.classList.add("active");
+      setTimeout(() => {
+        button.classList.remove("active");
+        button
+          .querySelector("i")
+          .classList.replace("bx-cloud-download", "bx-check-circle");
+        button.querySelector("span").innerText = "Completada";
+            // Crear un enlace de descarga programáticamente
+            const link = document.createElement('a');
+        link.href = 'documento.pdf'; // Ruta al archivo PDF
+        link.download = 'documento.pdf'; // Nombre del archivo para la descarga
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 6000);
+    });
+  </script>
+</body>
+</html>
